@@ -73,5 +73,5 @@ def chat_view(request):
         return JsonResponse({'response': bot_response})
 
 
-def chat_page(request):e
+def chat_page(request):
     return render(request, 'chatbot/chat.html')  # Render the chat page template

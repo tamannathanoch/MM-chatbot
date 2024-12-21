@@ -1,0 +1,199 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Prevent the entire container from scrolling */
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed; /* Fixes sidebar position to prevent overlap */
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 100vh;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-right: 1px solid #ddd;
+    overflow-y: auto; 
+}
+
+.card-btn {
+    background-color: white;
+    color: #4ec1f2 ;
+    border: 2px solid #4ec1f2;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: #4ec1f2;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Chat Section */
+.chat-section {
+    margin-left: 20%; /* Offset to account for the sidebar */
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #4ec1f2; /* Updated navbar color */
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px; /* Added to make corners curvy */
+}
+
+
+
+.logo {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 30px;
+    color: white; /* Updated logo font color */
+    font-weight: bold; /* Bold the font */
+}
+
+.theme-btn, .color-btn {
+    padding: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Chat Content */
+.chat-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow-y: auto; /* Independent scroll for chat messages */
+    margin-top: 20px;
+}
+
+/* Chat Box */
+.chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black; /* Added black border */
+}
+
+
+/* Message Styles */
+.user-message, .ai-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: block; /* Use block to ensure each message is on its own line */
+    max-width: fit-content; /* Width based on message content */
+    word-wrap: break-word; /* Allow long words to break */
+}
+
+.user-message {
+    align-self: flex-end; /* Align user messages to the right */
+    background-color: #dfeaef; /* Dark grey for user messages */
+    color: black; /* User message text color */
+}
+
+.ai-message {
+    align-self: flex-start; /* Align AI messages to the left */
+    background-color:#c3e9fa; /* Light grey for AI messages */
+    color: black; /* AI message text color */
+}
+
+
+/* Input Section */
+.input-section {
+    display: flex;
+    margin-top: 20px; /* Match this margin with the navbar and chat box spacing */
+    margin-bottom: 20px; /* Space from the bottom of the chat box */
+    background-color: white; /* Added background color */
+    padding: 15px; /* Optional: add padding for better spacing */
+    border-radius: 10px; /* Optional: round corners */
+}
+
+input {
+    flex-grow: 1;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: white; /* Match input background color */
+}
+
+
+button {
+    background-color: #c3e9fa;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+/* Button Styles for Conversation Options */
+.conversation-option {
+    background-color: #dfeaef;
+    color: black;
+    padding: 10px 15px; /* Reduced padding for smaller buttons */
+    border-radius: 5px; /* Slightly smaller border radius */
+    margin: 5px; /* Space between buttons */
+    cursor: pointer;
+    font-size: 14px; /* Adjust font size if needed */
+    transition: background-color 0.3s ease;
+}
+
+.conversation-option:hover {
+    background-color: #444; /* Darker shade on hover */
+}
+
+/* Adjust spacing above the buttons */
+.options-container {
+    margin-top: 5px; /* Reduced margin to decrease space above buttons */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .chat-section {
+        width: 100%;
+    }
+}
